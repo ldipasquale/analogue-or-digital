@@ -15,6 +15,7 @@
 # production
 /build
 /data
+/pages/api/photos/populate
 
 # misc
 .DS_Store

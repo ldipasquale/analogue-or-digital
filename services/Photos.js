@@ -1,4 +1,6 @@
 import fetch from 'unfetch'
+import firebase from 'firebase/app'
+import 'firebase/analytics'
 
 async function get() {
   const response = await fetch('/api/photos', {
@@ -18,6 +20,11 @@ async function vote(id, type) {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({ type }),
+  })
+
+  firebase.analytics().logEvent('vote', {
+    id,
+    type,
   })
 
   return response.json()

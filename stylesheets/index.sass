@@ -1,0 +1,42 @@
+@import './vendor/sanitize.css'
+@import './vendor/reset.css'
+@import './vars/index.sass'
+
+html,
+body,
+[data-reactroot]
+  height: 100%
+
+body
+  background: #000
+  color: $color-black
+  font-family: $font-family-standard
+  font-weight: $font-weight-standard
+  line-height: $line-height-standard
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  text-transform: lowercase
+  overflow: scroll
+  font-size: $font-size-standard
+  -webkit-tap-highlight-color: transparent
+
+strong
+  font-weight: $font-weight-bold
+
+a
+  text-decoration: none
+  color: inherit
+  position: relative
+
+  &:after
+    content: ''
+    height: 1px
+    position: absolute
+    bottom: 0
+    left: 0
+    width: 0%
+    background: $color-white
+    transition: 0.5s
+
+  &:hover:after
+    width: 100%

@@ -1,0 +1,16 @@
+export default {
+  TINY: 2,
+  XSMALL: 4,
+  SMALL: 6,
+  STANDARD: 8,
+  MEDIUM: 12,
+  LARGE: 16,
+  LARGER: 20,
+  XLARGE: 24,
+  XLARGER: 28,
+  HUGE: 32,
+  XHUGE: 36,
+  XXHUGE: 48,
+  ENORMOUS: 64,
+  XENORMOUS: 72,
+}

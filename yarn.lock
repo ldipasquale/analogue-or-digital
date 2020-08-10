@@ -1589,6 +1589,11 @@ array-unique@^0.3.2:
   resolved "https://registry.yarnpkg.com/array-unique/-/array-unique-0.3.2.tgz#a894b75d4bc4f6cd679ef3244a9fd8f46ae2d428"
   integrity sha1-qJS3XUvE9s1nnvMkSp/Y9Gri1Cg=
 
+array-unsort@^1.1.5:
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/array-unsort/-/array-unsort-1.1.5.tgz#1ae8fbe1e2f0df267f3fd40213989f3a0e7d2610"
+  integrity sha512-j3mxHknyx4ZyMvttnfVfe8ZXr+y1XNoIP5UXJnVY+GWpal1Ac86B3DbHmVZu5w3k6kmsB09PyfD0htuw1yCy3A==
+
 array.prototype.flat@^1.2.3:
   version "1.2.3"
   resolved "https://registry.yarnpkg.com/array.prototype.flat/-/array.prototype.flat-1.2.3.tgz#0de82b426b0318dbfdb940089e38b043d37f6c7b"

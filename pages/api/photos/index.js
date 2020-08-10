@@ -1,5 +1,5 @@
 import db from 'lib/db'
-import { Arrays } from 'utils'
+import { unsort } from 'array-unsort'
 
 const AMOUNT = 30
 
@@ -9,9 +9,7 @@ export default async (req, res) => {
   }
 
   const photosRef = await db.photos.get()
-  const photosDocs = photosRef.docs
-
-  Arrays.shuffleArray(photosDocs)
+  const photosDocs = unsort(photosRef.docs)
 
   const photos = photosDocs
     .slice(0, AMOUNT)

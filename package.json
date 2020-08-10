@@ -10,6 +10,7 @@
     "format": "eslint . --fix"
   },
   "dependencies": {
+    "array-unsort": "^1.1.5",
     "axios": "^0.19.2",
     "classnames": "^2.2.6",
     "eslint-plugin-babel": "^5.3.1",

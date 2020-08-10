@@ -43,7 +43,7 @@ const Button = ({ theme, loading, selected, isRight, percentage, onClick }) => {
           />
 
           <div className={styles.percentage}>
-            {`${percentage * 100}%`}
+            {`${(percentage * 100).toFixed(2)}%`}
           </div>
         </>
       ) : imageNumber !== undefined && (

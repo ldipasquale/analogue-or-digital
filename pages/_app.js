@@ -21,7 +21,6 @@ function loadAnalytics() {
 
   firebase.analytics()
 }
-
 const App = ({ Component, pageProps }) => { // eslint-disable-line react/prop-types
   useEffect(loadAnalytics, [])
 

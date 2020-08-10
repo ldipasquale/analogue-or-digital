@@ -15,9 +15,9 @@ export default ({ Component, pageProps }) => ( // eslint-disable-line react/prop
       <meta property="og:title" content="¿analógico o digital?" />
       <meta property="og:site_name" content="¿analógico o digital?" />
       <meta property="og:description" content="¿y si no es como parece?" />
-      <meta property="og:image" content="https://indefinible.live/logo.jpg" />
-      <meta property="og:url" content="https://indefinible.live" />
-      <meta name="twitter:card" content="https://indefinible.live/logo.jpg" />
+      <meta property="og:image" content="https://analogico-o-digital.vercel.app/logo.jpg" />
+      <meta property="og:url" content="https://analogico-o-digital.vercel.app" />
+      <meta name="twitter:card" content="https://analogico-o-digital.vercel.app/logo.jpg" />
       <meta name="twitter:image:alt" content="¿y si no es como parece?" />
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 

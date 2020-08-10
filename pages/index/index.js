@@ -6,8 +6,7 @@ import ProgressiveImage from 'react-progressive-image'
 import { Types } from 'eternal'
 import { Button, Spinner } from 'components'
 import { Photos } from 'services'
-
-import usePhotos from './usePhotos'
+import usePhotos from 'lib/usePhotos'
 
 import styles from './styles.module.sass'
 

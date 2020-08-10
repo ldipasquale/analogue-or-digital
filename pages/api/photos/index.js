@@ -1,7 +1,7 @@
 import db from 'lib/db'
 import { Arrays } from 'utils'
 
-const AMOUNT = 2
+const AMOUNT = 30
 
 export default async (req, res) => {
   if (req.method !== 'GET') {

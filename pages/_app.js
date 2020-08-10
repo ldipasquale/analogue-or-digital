@@ -1,23 +1,28 @@
 import { useEffect } from 'react'
 import Head from 'next/head'
+import { withTranslation } from 'react-i18next'
 import firebase from 'firebase/app'
 import 'firebase/analytics'
+
+import '../i18n'
 
 import 'stylesheets/index.sass'
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css'
 
 function loadAnalytics() {
-  firebase.initializeApp({
-    apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
-    projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
-    appId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_APP_ID,
-    measurementId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_MEASUREMENT_ID,
-  })
+  if (!firebase.apps.length) {
+    firebase.initializeApp({
+      apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+      projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+      appId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_APP_ID,
+      measurementId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_MEASUREMENT_ID,
+    })
+  }
 
   firebase.analytics()
 }
 
-export default ({ Component, pageProps }) => { // eslint-disable-line react/prop-types
+const App = ({ Component, pageProps }) => { // eslint-disable-line react/prop-types
   useEffect(loadAnalytics, [])
 
   return (
@@ -48,3 +53,5 @@ export default ({ Component, pageProps }) => { // eslint-disable-line react/prop
     </>
   )
 }
+
+export default withTranslation()(App)

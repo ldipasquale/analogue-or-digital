@@ -1,5 +1,7 @@
 import { useState } from 'react'
+import PropTypes from 'prop-types'
 import cx from 'classnames'
+import { withTranslation } from 'react-i18next'
 
 import ProgressiveImage from 'react-progressive-image'
 
@@ -14,7 +16,7 @@ const typesList = Object.values(Types)
 
 const SEEING_RESULTS_DURATION = 2000
 
-export default function Home() {
+const Home = ({ t }) => {
   const { images, error, isFetching, onFetch } = usePhotos()
 
   const [selectedOption, setSelectedOption] = useState()
@@ -52,12 +54,12 @@ export default function Home() {
         <div className={styles.errorMessage}>
           <img
             src="/photographer.svg"
-            alt="Hubo un error al cargar las imágenes"
+            alt={t`images_error__title`}
             className={styles.errorMessageImage}
           />
 
-          <div className={styles.errorMessageTitle}>¡Hubo un error al cargar las imágenes!</div>
-          <div>Intenta de nuevo por favor. ¡Gracias!</div>
+          <div className={styles.errorMessageTitle}>{t`images_error__title`}</div>
+          <div>{t`images_error__description`}</div>
         </div>
       ) : (
         <>
@@ -72,14 +74,14 @@ export default function Home() {
                   <img
                     src={src}
                     className={styles.background}
-                    alt="¿Analógico o digital?"
+                    alt={t`title`}
                   />
                 )}
               </ProgressiveImage>
 
               <div className={styles.credits}>
                 <div>
-                  {'foto de '}
+                  {t`photo_credits__taken`}
                   <a
                     href={`https://unsplash.com/@${currentImage.author.username}`}
                     target="_blank"
@@ -87,7 +89,7 @@ export default function Home() {
                   >
                     {currentImage.author.name}
                   </a>
-                  {' en '}
+                  {t`photo_credits__in`}
                   <a
                     href="https://unsplash.com"
                     target="_blank"
@@ -128,3 +130,9 @@ export default function Home() {
     </div>
   )
 }
+
+Home.propTypes = {
+  t: PropTypes.func.isRequired,
+}
+
+export default withTranslation()(Home)

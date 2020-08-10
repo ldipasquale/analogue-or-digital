@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
+import { withTranslation } from 'react-i18next'
 
 import { Types } from 'eternal'
 
@@ -12,7 +13,7 @@ const typesList = Object.values(Types)
 
 const AMOUNT_OF_IMAGES = 5
 
-const Button = ({ theme, loading, selected, isRight, percentage, onClick }) => {
+const Button = ({ theme, loading, selected, isRight, percentage, onClick, t }) => {
   const [imageNumber, setImageNumber] = useState()
 
   useEffect(() => {
@@ -38,7 +39,7 @@ const Button = ({ theme, loading, selected, isRight, percentage, onClick }) => {
         <>
           <img
             src={`/${isRight ? 'tick' : 'cross'}.svg`}
-            alt={`Esta opción era la ${isRight ? 'correcta' : 'incorrecta'}`}
+            alt={isRight ? t`option__right` : t`option__wrong`}
             className={styles.resultIcon}
           />
 
@@ -48,7 +49,7 @@ const Button = ({ theme, loading, selected, isRight, percentage, onClick }) => {
         </>
       ) : imageNumber !== undefined && (
         <img
-          src={`/${theme}/${imageNumber}.svg`}
+          src={`/${theme}/${t`lang`}/${imageNumber}.svg`}
           alt={theme}
           className={styles.buttonIcon}
         />
@@ -64,6 +65,7 @@ Button.propTypes = {
   isRight: PropTypes.bool,
   percentage: PropTypes.number,
   onClick: PropTypes.func,
+  t: PropTypes.func.isRequired,
 }
 
 Button.defaultProps = {
@@ -74,4 +76,4 @@ Button.defaultProps = {
   onClick: null,
 }
 
-export default Button
+export default withTranslation()(Button)

@@ -1,0 +1,9 @@
+{
+  "lang": "es",
+  "images_error__title": "¡Hubo un error al cargar las imágenes!",
+  "images_error__description": "Intenta de nuevo por favor. ¡Gracias!",
+  "photo_credits__taken": "foto de ",
+  "photo_credits__in": " en ",
+  "option__right": "Esta opción era la correcta",
+  "option__wrong": "Esta opción era la incorrecta"
+}

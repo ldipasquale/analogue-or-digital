@@ -15,17 +15,17 @@ export default async (req, res) => {
   const photoStockIds = photosRef.docs.map((doc) => doc.data().stockId)
 
   const newPhotos = [
-    ...newRawPhotos.analogue.map(photo => ({
+    ...newRawPhotos.analogue.map((photo) => ({
       ...photo,
       type: Types.ANALOGUE,
     })),
-    ...newRawPhotos.digital.map(photo => ({
+    ...newRawPhotos.digital.map((photo) => ({
       ...photo,
       type: Types.DIGITAL,
     })),
   ]
 
-  for (var i = 0; i < newPhotos.length; i++) {
+  for (let i = 0; i < newPhotos.length; i++) {
     const newPhoto = newPhotos[i]
 
     if (photoStockIds.includes(newPhoto.id)) {
@@ -43,7 +43,7 @@ export default async (req, res) => {
 
       createdPhotos += 1
     } catch (error) {
-      console.log('error with', newPhoto)
+      console.log('error with', newPhoto) // eslint-disable-line no-console
     }
   }
 

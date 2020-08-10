@@ -3,7 +3,7 @@ import Head from 'next/head'
 import 'stylesheets/index.sass'
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css'
 
-export default ({ Component, pageProps }) => (
+export default ({ Component, pageProps }) => ( // eslint-disable-line react/prop-types
   <>
     <Head>
       <title>¿analógico o digital?</title>

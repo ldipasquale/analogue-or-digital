@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Photos } from 'services'
 
-export default function() {
+export default function () {
   const [images, setImages] = useState()
   const [error, setError] = useState()
 
@@ -16,8 +16,8 @@ export default function() {
     try {
       fetchImages()
       setError(undefined)
-    } catch(error) {
-      setError(error)
+    } catch (requestError) {
+      setError(requestError)
     }
   }, [])
 

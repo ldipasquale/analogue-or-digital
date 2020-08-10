@@ -14,7 +14,7 @@ async function vote(id, type) {
   const response = await fetch(`/api/photos/${id}`, {
     method: 'POST',
     headers: {
-      'Accept': 'application/json',
+      Accept: 'application/json',
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({ type }),

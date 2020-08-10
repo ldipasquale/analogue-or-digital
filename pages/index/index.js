@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import cx from 'classnames'
 
 import ProgressiveImage from 'react-progressive-image'
@@ -21,7 +21,6 @@ export default function Home() {
   const [selectedOption, setSelectedOption] = useState()
   const [results, setResults] = useState()
   const [imageNumber, setImageNumber] = useState(0)
-  const [isLoadingImage, setIsLoadingImage] = useState(0)
 
   const currentImage = images?.[imageNumber]
 
@@ -42,7 +41,7 @@ export default function Home() {
         return
       }
 
-      setImageNumber(oldImageNumber => oldImageNumber + 1)
+      setImageNumber((oldImageNumber) => oldImageNumber + 1)
       setResults(undefined)
       setSelectedOption(undefined)
     }, SEEING_RESULTS_DURATION)
@@ -81,7 +80,7 @@ export default function Home() {
 
               <div className={styles.credits}>
                 <div>
-                  {`foto de `}
+                  {'foto de '}
                   <a
                     href={`https://unsplash.com/@${currentImage.author.username}`}
                     target="_blank"
@@ -89,7 +88,7 @@ export default function Home() {
                   >
                     {currentImage.author.name}
                   </a>
-                  {` en `}
+                  {' en '}
                   <a
                     href="https://unsplash.com"
                     target="_blank"
@@ -108,7 +107,7 @@ export default function Home() {
               [styles.loadingOptions]: isFetching,
             })}
           >
-            {typesList.map(type => (
+            {typesList.map((type) => (
               <div
                 key={type}
                 className={styles.option}
